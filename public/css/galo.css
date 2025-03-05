@@ -1,0 +1,393 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(../font/BankinterSans-Reg.otf);
+  }
+  @font-face {
+    font-family: my-bold;
+    src: url(../font/BankinterSans-Bol.otf);
+  }
+
+.topline{
+    height: 2.5rem;
+    background-color: rgb(235 238 245);
+    width: 100%;
+}
+.topline2{
+    height: 40px;
+    background-color: rgb(235 238 245);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.kolchi{
+    top: 0;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    margin: 0 12%;
+}
+.lfoq{
+    width: 100%;
+}
+.top-mb{
+    display: none;
+}
+.lfoq img{
+    width: 100%;
+}
+
+.center{
+    display: grid;
+    margin: 0 27%;
+    margin-top: 25px;
+    padding-right:10%;
+}
+
+.pp1{
+    font-family: myFirstFont;
+    font-size: 1.75rem;
+    margin-bottom: 40px;
+}
+.pp2{
+    font-size: 13px;
+    font-family: myFirstFont;
+    font-weight: light;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+/*  */
+
+
+
+/*  */
+
+.group { 
+    position:relative; 
+    margin-bottom:25px; 
+    
+    height: 3.7rem;
+    border-radius: 7px;
+    border:solid 1px gray;
+
+
+  }
+  .group input {
+    font-size:14px;
+    padding: 1.5rem 1rem 0.5rem;
+    display:block;
+    width:100%;
+    border:none;
+    font-family:myFirstFont ;
+    background-color: transparent;
+    padding-top: 27px;
+    color: black;
+    border-radius: 7px;
+    font-size: 17px;
+    outline: none;
+  }
+ 
+  
+  /* LABEL ======================================= */
+  label {
+    color:rgb(144, 144, 144); 
+    font-size:16px;
+    font-weight:normal;
+    font-family:myFirstFont ;
+    position:absolute;
+    pointer-events:none;
+    left:10px;
+    top:18px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  
+  /* active state */
+  input:focus ~ label, input:valid ~ label {
+    top:5px;
+    left:10px;
+    color:#ff821c;
+    font-size: 14px;
+    font-family: my-bold;
+  }
+
+button{
+    background-color: #ff821c;
+    border: none;
+    color: black;
+    border-radius: 100px;
+    height: 50px;
+    padding: 0 40px;
+    font-size: .75rem;
+    font-family:myFirstFont ;
+    text-transform: uppercase;
+}
+
+
+.botano img{
+    width: 100%;
+    margin-top: 15%;
+}
+.bot-mb{
+    display: none;
+}
+
+/* numori */
+
+
+.pp3{
+    margin-bottom: 25px;
+    font-family: my-bold;
+    font-size: 18px;
+    color:#000000 ;
+    margin-top: 30px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.center2 button{
+    justify-self: end;
+    float: right;
+    margin-top: 40px;
+}
+.inform{
+    padding-right: 40%;
+}
+
+.pp4{
+    font-family: myFirstFont;
+    color: rgb(69, 69, 69);
+    margin-bottom: 25px;
+    margin-top: 60px;
+}
+.pp4 span{
+    font-family: my-bold;
+    color: black;
+    
+}
+
+/* input */
+.group2{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    align-items: center;
+    padding-left: 20px;
+    position:relative; 
+    margin-bottom:25px; 
+    
+    height: 3.7rem;
+    border-radius: 7px;
+    border:solid 1px gray;
+    margin-right: 40%;
+}
+.group2 input{
+    outline: none;
+    height: 40px;
+    color: #000000;
+    border: none;
+    border-radius: 0;
+    border-left: 1px solid gray;
+    padding-left: 20px;
+    font-family:myFirstFont ;
+    color: black;
+    font-size: 15px;
+}
+
+/* otimis */
+
+.inp1{
+    position:relative; 
+    margin-bottom:25px; 
+    width: 170px;
+    padding-left: 10px;
+    font-family: myFirstFont;
+    height: 3.4rem;
+    border-radius: 7px;
+    border:solid 1px gray;
+    outline: none;
+}
+
+.group3{
+    margin-right: 40%;
+}
+/*  */
+
+/* Initial styles */
+.group3 {
+    margin-bottom: 20px;
+}
+
+.inp1 {
+    padding: 10px;
+    border: 1px solid #ccc;
+    
+    
+    box-sizing: border-box;
+}
+
+#submitBtn {
+   
+    background-color: lightgray;
+    border: none;
+    
+    cursor: not-allowed;
+    font-family:myFirstFont ;
+}
+
+/* Style when input is invalid */
+.inp1.invalid {
+    border-color: red;
+}
+
+/* Style for enabled button */
+#submitBtn:enabled {
+    background-color: #ff821c;
+    border: none;
+    color: black;
+    border-radius: 100px;
+    height: 50px;
+    padding: 0 40px;
+    font-size: .75rem;
+    font-family:myFirstFont ;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* cci */
+
+.mm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.mm input{
+    width: 100%;
+}
+.right-mm{
+    margin-right: 20px;
+}
+
+.in-cc{
+    margin-right: 20%;
+}
+.inp-mini{
+    margin-right: 55%;
+}
+/* loading animatio */
+.p-lod{
+    font-family:myFirstFont ;
+    
+}
+.frame {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    align-content: center;
+  }
+  
+  .center4 {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    align-self: center;
+    justify-self: center;
+  }
+  
+  .dot-1 {
+    position: absolute;
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    top: 95px;
+    left: 95px;
+    background: #ffdc54;
+    border-radius: 50%;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation: jump-jump-1 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+    animation: jump-jump-1 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  }
+  
+  .dot-2 {
+    position: absolute;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    top: 80px;
+    left: 80px;
+    background: #b5f0ef;
+    border-radius: 50%;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation: jump-jump-2 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+    animation: jump-jump-2 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  }
+  
+  .dot-3 {
+    position: absolute;
+    z-index: 1;
+    width: 90px;
+    height: 90px;
+    top: 65px;
+    left: 65px;
+    background: #ff821c;
+    border-radius: 50%;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation: jump-jump-3 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+    animation: jump-jump-3 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  }
+  
+  @keyframes jump-jump-1 {
+    0%, 70% {
+      box-shadow: 2px 2px 3px 2px rgba(117, 117, 117, 0.2);
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+  
+    100% {
+      box-shadow: 10px 10px 15px 0 rgba(120, 120, 120, 0.3);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes jump-jump-2 {
+    0%, 40% {
+      box-shadow: 2px 2px 3px 2px rgba(132, 132, 132, 0.2);
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+  
+    100% {
+      box-shadow: 10px 10px 15px 0 rgba(125, 125, 125, 0.3);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes jump-jump-3 {
+    0%, 10% {
+      box-shadow: 2px 2px 3px 2px rgba(112, 112, 112, 0.2);
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+  
+    100% {
+      box-shadow: 10px 10px 15px 0 rgba(113, 113, 113, 0.3);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  

